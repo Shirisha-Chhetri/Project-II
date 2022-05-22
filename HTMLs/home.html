@@ -1,0 +1,115 @@
+{% extends 'header.html' %}
+{% block content %}
+{% load static %}
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <!-- for searhing --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(function() {
+              $("#tags").autocomplete({
+                source: "/search_auto/",
+                select: function (event, ui) { 
+                  AutoCompleteSelectHandler(event, ui);               
+                  $("#tags").val(ui.item.value);
+                  $("#formsubmit").submit();                
+                },
+                minLength: 2,
+              }).data("ui-autocomplete")._renderItem = function(ul, item) {
+                
+                 item.label = item.title.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<span style='font-weight:bold; color:#C45525'>$1</span>");
+
+            //    item.label = item.title.replace(new RegExp(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '') + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<span style='font-weight:bold; color:#C45525'>$1</span>");
+                  return $("<li>")
+                  .data("item.autocomplete", item)
+                  .append("<a href='search/?search="+item.title+"'><div><img src='" + item.image + "' height='50pc' width='50pc' /> " + item.label + "</div></a>")                   
+                  .appendTo(ul);                  
+              };
+            });
+        });
+          
+            function AutoCompleteSelectHandler(event, ui){    
+              var selectedObj = ui.item;
+            }           
+            $('.noEnterSubmit').bind('keypress', false);
+
+            function RemoveSpecialChar(tags) {
+            if (tags.value != '' && tags.value.match(/^[\w ]+$/) == null) {
+            tags.value = tags.value.replace(/[\W]/g, '');
+            }
+            }
+
+      //       $(document).on("keydown", "form", function(event) { 
+      //     return event.key != "Enter";
+      // });
+        </script>
+       
+    <div class="row">
+        <img src="{% static 'image/book.jpg' %}" class="img"/>
+    </div>
+
+    <div id="sec3">
+        <div class="container">
+            <div class="row ui">
+                <p class="book">Discover and Recover Through Books!!!</p>
+                <form class="form-inline my-2 my-lg-0" action="/search" id="formsubmit" name="form">
+                  <i class="fa fa-search search"></i>
+                  <input class="form-control mr-sm-2 inputs" name="search" type="search" placeholder="Search book that you want to read..." id="tags" onkeyup="RemoveSpecialChar(this)" >
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="sec5">
+        <div class="container-fluid ml-2">
+            <div class="row">
+                {% for genre in genres %}
+                    <button class="btn button btn1 mr-2 mb-2"><a href="/bookson?genre={{genre.id}}">{{genre.title}}</a></button>
+                {% endfor %}
+                <span class="more mt-3"><a href="allgenre/">More Genre...</a></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+      <img src="{% static 'image/book1.jpg' %}" class="img mb-2" style="height:30pc;"/>
+      <div class="centered col-md-6">
+        <h4>You know you've read a good</h4>
+        <h4>book when you turn the last page</h4>
+        <h4>and feel a little as if </h4>
+        <h4>you have lost a friend.</h4>
+      </div>
+  </div>
+    
+    <!-- <div class="container-fluid">
+        <div class="row">  
+          <marquee  behavior="scroll" direction="left" loop="2" style="animation: marquee 13s linear infinite;"> 
+            {% for b in sliding %}          
+            <img src="{{b.image}}" class="caro mr-1">
+            {% endfor %} 
+          </marquee>       
+        </div>
+      </div> -->
+
+      <script type="text/javascript">
+       
+    
+
+      //  let tag = document.getElementById("tags");
+      // console.log(tag);
+      //   tag.addEventListener("input",function($event){
+      //        if(/[^a-zA-Z0-9]/.test(tag.value)) {
+      //     tag.value =''
+      //     }
+      //     })
+        </script>
+      
+  
+{% endblock %}

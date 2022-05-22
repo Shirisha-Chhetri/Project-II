@@ -1,0 +1,32 @@
+/*sec 3*/
+.img1{
+  height: 30pc;
+  width: 45pc;
+}
+.para{
+	text-align: justify;
+}
+
+
+/* wishlist */
+.genrename{
+  font-size:2pc;
+  margin-left:33pc;
+}
+.card {
+  flex-direction: row;
+}
+.image{
+  height:8pc;
+  margin-top: 1pc;
+  margin-left: 1pc;
+  width: 6pc;
+}
+.add{
+  background-color: #22929d;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+.btnclass{
+  margin-left: 13pc;
+}

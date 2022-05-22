@@ -1,0 +1,65 @@
+{% extends 'header.html' %}
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <p class="genrename mt-5">Your Search</p>
+    
+    {% for book in data %}
+    <div class="row mt-2">
+        <div class="card" style="width:45rem; height:10rem;">       
+            <img src="{{book.image}}" class=" image" alt="...">
+            <div class="card-body">
+                <div style="width:25rem; height:auto;">
+                    <a href="/getbook/{{book.id}}"><h6 class="card-title ml-3">{{book.title}}</h6></a>
+                    <span class="card-text ml-3" style="text-align: justify;">Author: {{book.author}}</span>
+                </div>
+                {% if not context.is_favourite %} 
+                    <div>
+                    <a href="/add_to_fav/{{book.id}}" class="add">Add To WishList</a>
+                    </div>
+                    {% else %} 
+                    <div>
+                        <a href="/remove_from_fav/{{book.id}}">
+                            Remove from Favourite
+                        </a>
+                    </div>
+                {% endif %}
+        
+                <a href="https://www.amazon.com/s?k={{book.title}}&rh=n%3A283155&tag=wsirn2020-20" class="add btnclass" target="_blank">Buy Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div>
+        <!-- for recommendation -->
+       <p class="genrename mt-5" style="font-size: 1.5pc !important;">Some Recommendations For You</p>
+        {% for book in recommended_book %}
+        <div class="row mt-2">
+            <div class="card" style="width:45rem; height:10rem;">       
+                <img src="{{book.image}}" class=" image" alt="...">
+                <div class="card-body">
+                    <div style="width:25rem; height:auto;">
+                        <a href="/getbook/{{book.id}}"><h6 class="card-title ml-3">{{book.title}}</h6></a>
+                        <span class="card-text ml-3" style="text-align: justify;">Author: {{book.author}}</span>
+                    </div>
+                    {% if not context.is_favourite %} 
+                        <div>
+                        <a href="/add_to_fav/{{book.id}}" class="add">Add To WishList</a>
+                        </div>
+                        {% else %} 
+                        <div>
+                            <a href="/remove_from_fav/{{book.id}}">
+                                Remove from Favourite
+                            </a>
+                        </div>
+                    {% endif %}
+            
+                    <a href="#" class="add btnclass">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

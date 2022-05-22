@@ -1,0 +1,89 @@
+a{
+  color: black!important;
+}
+
+/*sec4*/
+#sec4{
+  margin-top:19px;
+}
+.head{
+  margin: 1% 42%;
+  color: #42c7d5;
+  font-size: 40px;
+}
+.image1{
+  width:660px;
+  height: 575px;
+}
+.image{
+  height: 145px;
+  width: 150px;
+  align-content: center;
+  margin-left:44%;
+}
+.login{
+  height:40px;
+  width:355px;
+  background-color:#8fdfe7;
+}
+.container i {
+    margin-left:-2pc;
+    cursor: pointer;
+    color: black;
+}
+input,button{
+  border: none;
+}
+#togglePassword{
+  margin-left: -20px;
+}
+#togglePassword1{
+  margin-left: -20px;
+}
+.image1{
+  width:488px;
+  height:570px;
+  margin-top: 2pc;
+}
+.sign,.form{
+  border: solid black;
+  width:90%;
+  padding: 20px;
+  margin-left:2pc;
+  border-radius: 8px;
+  text-align: center;
+  height:32pc;
+}
+.sign label{
+  font-size: 20px;
+}
+.sign input{
+  height:30px;
+  width: 250px;
+  background-color:#8fdfe7;
+  border: none;
+}
+#namef{
+  margin-left:80px;
+}
+#namel{
+  margin-left: 82px;
+}
+#email{
+  margin-left: 128px;
+}
+#uname{
+  margin-left: 5pc;
+}
+#pass{
+  margin-left: 94px;
+}
+#signin{
+  margin-top:18px;
+  font-size: 20px;
+  color: black;
+  background-color:#22929d;;
+  height: 50px;
+  border: none;
+  width: 350px;
+}

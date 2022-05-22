@@ -1,0 +1,125 @@
+/*sec3  home.html*/
+input{
+  width:50pc!important;
+}
+.book{
+  font-size: 35px;
+  align-content: center;
+  font-weight: bold;
+  margin-left:9pc;
+}
+.btn1{
+  height:60px !important;
+  width:17pc !important;
+  border: none;
+  font-size: 20px !important;
+}
+.img{
+  height: 30pc;
+  width: 100pc;
+}
+.button{
+  background-color: #b38de9;
+}
+.button a{
+  color: black;
+}
+.caro{
+  height:10pc;
+  width: 10pc;
+}
+.search{
+  position: absolute;
+  margin-left: 6pc;
+  color: burlywood;
+}
+.inputs{
+  text-indent: 2pc;
+  height:3pc;
+  margin-left: 5pc;
+  font-size: 17px;
+}
+.centered{
+  color: white;
+  margin-top: -20pc;
+  margin-left:6pc;
+}
+.more a{
+  color: black;
+  font-size: 20px;
+  margin-left: 6pc;
+}
+
+
+/* book.html */
+.bookimage{
+  width: 11.5pc;
+  height:15pc;
+  margin-left: -11px;
+  margin-bottom: 8px;
+}
+
+
+/* specific_book */
+#bookdetail{
+  background-color:#eeeaf3;
+  height:auto;
+  margin-left: -1pc;
+  width: 72.3pc;
+}
+#bookdetail a{
+  color: black;
+  border: none;
+}
+.specificimg{
+  height: 25pc;
+  width: 30pc;
+  margin-left:6pc;
+}
+.describe{
+  margin-left:7pc;
+  text-align: justify;
+  margin-right: 2pc;
+}
+.title{
+  font-size: 16px;
+}
+.form{
+  margin-top: 6pc;
+  margin-left: 5pc;
+}
+.buy{
+  margin-left: 16pc !important;
+  margin-top: -4.5pc !important;
+}
+
+
+/* booksongenre */
+.genrename{
+  font-size:2pc;
+  text-align: center;
+}
+.card {
+  flex-direction: row;
+  margin-left:15pc;
+}
+.image{
+  height:8pc;
+  margin-top: 1pc;
+  margin-left: 1pc;
+  width: 6pc;
+}
+.add{
+  background-color: #8774cc;
+  float: right;
+  margin-top: -3pc;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+.btnclass{
+  margin-top: 0pc !important;
+  margin-right: 1pc;
+}
+.card-body a{
+ color: black;
+}
